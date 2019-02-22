@@ -1,4 +1,5 @@
 package com.regnant;
+import java.text.DecimalFormat;
 
 class ArrayStarter
 {
@@ -98,12 +99,14 @@ class ArrayStarter
 	}
 	static void SumAvg(int arr[])
 	{
-		int sum=0;
+		double sum=0;
 		for(int i=0;i<arr.length;i++)
 			sum=sum+arr[i];
 		System.out.println("Sum of the Array Elements:"+sum);
-		int avg=sum/arr.length;
-		System.out.println("Average of the Array Elements:"+avg);
+		DecimalFormat dec=new DecimalFormat("#0.00");
+		double avg=sum/arr.length;
+		String avg1=dec.format(avg);
+		System.out.println("Average of the Array Elements:"+avg1);
 		
 	}
 }
@@ -111,7 +114,7 @@ class ArrayStarterTest
 {
 	public static void main(String[] args)
 	{
-		int arr[]= {1,2,3,4,5};
+		int arr[]= {1,2,3,4,5,2};
 		System.out.println("Array Elements:");
 		ArrayStarter.printArrayEle(arr);
 		System.out.println("\n"+"Even Array Elements:");
